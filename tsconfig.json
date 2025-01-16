@@ -1,0 +1,75 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "baseUrl": "./",
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/components": [
+        "components/index.ts"
+      ],
+      "@/components/types": [
+        "components/types/components.type.ts"
+      ],
+      "@/lib": [
+        "lib/index.ts"
+      ],
+      "@/utils": [
+        "utils/index.ts"
+      ],
+      "@/generated/*": [
+        "types/generated/*"
+      ],
+      "@/stores": [
+        "stores/index.ts"
+      ],
+      "@/providers": [
+        "providers/index.ts"
+      ],
+      "@/hooks": [
+        "hooks/index.ts"
+      ],
+      "@/config": [
+        "config/index.ts"
+      ],
+      "@/next-drupal": [
+        "lib/next-drupal/index.ts"
+      ],
+      "@/queries": [
+        "lib/queries/index.ts"
+      ],
+      "@/actions": [
+        "app/actions/index.ts"
+      ]
+    },
+    "target": "ES2017"
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "next-sitemap.config.js"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

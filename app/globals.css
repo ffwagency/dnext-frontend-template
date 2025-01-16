@@ -1,0 +1,169 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --container: 1140px;
+    --container-max: 1920px;
+    --container-narrow: 864px;
+    --color-primary: #0d77b5;
+    --color-primary-light: #2494db;
+    --color-primary-lightest: #53b0eb;
+    --color-dark: #0d1214;
+    --color-grey: #313637;
+    --color-light-grey: #7e96a7;
+    --color-lightest-grey: #e7edf1;
+    --color-light: #ffffff;
+    --color-red: #e33f1e;
+    --color-gold: #fdca40;
+    --color-green: #3fa21c;
+}
+
+@layer base {
+    html {
+        font-size: 16px;
+        color: var(--color-dark);
+    }
+
+    :focus-visible {
+        @apply outline outline-2;
+    }
+
+    h1,
+    .h1,
+    h2,
+    .h2,
+    h3,
+    .h3,
+    h4,
+    .h4,
+    h5,
+    .h5,
+    h6,
+    .h6 {
+        @apply my-4;
+    }
+
+    h1,
+    .h1 {
+        @apply text-6xl;
+    }
+
+    h2,
+    .h2 {
+        @apply text-4xl;
+    }
+
+    h3,
+    .h3 {
+        @apply text-3xl;
+    }
+
+    h4,
+    .h4 {
+        @apply text-2xl;
+    }
+
+    h5,
+    .h5 {
+        @apply text-xl;
+    }
+
+    h6,
+    .h6 {
+        @apply text-lg;
+    }
+
+    @layer utilities {
+        .container {
+            max-width: var(--container);
+
+            @apply mx-auto px-4;
+        }
+
+        .container-max {
+            max-width: var(--container-max);
+
+            @apply mx-auto;
+        }
+
+        .highlight-text {
+            color: var(--color-primary);
+        }
+
+        .container-narrow {
+            max-width: var(--container-narrow);
+
+            @apply mx-auto px-4;
+        }
+
+        .hide-mobile {
+            @apply md-max:hidden;
+        }
+
+        .hide-tablet {
+            @apply lg-max:hidden;
+        }
+
+        .hide-desktop {
+            @apply lg:hidden;
+        }
+    }
+    @layer components {
+        .schema-form .rjsf {
+            @apply mt-10;
+        }
+
+        .schema-form fieldset > legend {
+            @apply mb-4 text-2xl;
+        }
+
+        .schema-form .field-string {
+            @apply mb-5 flex flex-col;
+        }
+
+        .schema-form .field-number {
+            @apply mb-5 flex flex-col;
+        }
+
+        .schema-form .form-control {
+            @apply rounded-[3px] border border-light-grey;
+        }
+
+        .schema-form input {
+            @apply min-h-16 max-w-[80%] px-2;
+        }
+
+        .schema-form input[type="number"] {
+            @apply max-w-[20%];
+        }
+
+        .schema-form input[type="checkbox"] {
+            @apply h-[30px] w-[30px];
+        }
+
+        .schema-form textarea {
+            @apply min-h-48 px-2;
+        }
+
+        .schema-form .field-boolean .checkbox label {
+            @apply mb-5 flex items-center;
+        }
+
+        .schema-form .field-boolean .checkbox label span {
+            @apply ml-3 text-lg text-grey;
+        }
+
+        .schema-form .control-label {
+            @apply mb-2 text-lg text-grey;
+        }
+
+        .schema-form .control-label .required {
+            @apply mx-1 text-primary;
+        }
+
+        .schema-form .btn {
+            @apply rounded-[3px] bg-primary-light px-8 py-4 text-xl text-light hover:bg-primary;
+        }
+    }
+}

@@ -1,0 +1,191 @@
+{
+    "extends": [
+        // Use Airbnb's base JavaScript style guide
+        "airbnb",
+        // Use Airbnb's React style guide
+        "airbnb/hooks",
+        // Use recommended rules from eslint
+        "eslint:recommended",
+        // Use recommended rules from @typescript-eslint/eslint-plugin
+        "plugin:@typescript-eslint/recommended",
+        // Use rules from @typescript-eslint that require type information
+        "plugin:@typescript-eslint/recommended-requiring-type-checking",
+        // Use Next.js specific linting rules
+        "next/core-web-vitals",
+        // Use recommended rules from @next/next
+        "plugin:@next/next/recommended",
+        // Use recommended rules for accessibility
+        "plugin:jsx-a11y/recommended",
+        // Use recommended rules for Tailwind CSS
+        "plugin:tailwindcss/recommended",
+        // Integrate Prettier for code formatting
+        "plugin:prettier/recommended",
+        // Use recommended legacy security rules
+        "plugin:security/recommended-legacy"
+    ],
+    "plugins": [
+        // TypeScript specific linting rules
+        "@typescript-eslint",
+        // Next.js specific linting rules
+        "@next/next",
+        // React specific linting rules
+        "react",
+        // React Hooks specific linting rules
+        "react-hooks",
+        // Accessibility linting rules
+        "jsx-a11y",
+        // Tailwind CSS linting rules
+        "tailwindcss",
+        // Integrate Prettier for code formatting
+        "prettier",
+        // Lint for unused imports
+        "unused-imports",
+        // Sorting imports
+        "simple-import-sort",
+        // Linting rules for ES6+ import/export syntax
+        "import",
+        // Security linting rules
+        "security"
+    ],
+    "rules": {
+        // Enforce Prettier formatting rules
+        "prettier/prettier": [
+            "error",
+            {
+                "printWidth": 80,
+                "tabWidth": 4,
+                "useTabs": false,
+                "semi": true,
+                "singleQuote": false,
+                "jsxSingleQuote": false,
+                "trailingComma": "es5",
+                "bracketSpacing": true,
+                "jsxBracketSameLine": false,
+                "arrowParens": "always",
+                "proseWrap": "preserve",
+                "endOfLine": "lf"
+            }
+        ],
+        // Disables the requirement for defining default props
+        "react/require-default-props": "off",
+        // Disable function component definition rule
+        "react/function-component-definition": "off",
+        // Disable props spreading rule
+        "react/jsx-props-no-spreading": "off",
+        // Warn on explicit any usage
+        "@typescript-eslint/no-explicit-any": "warn",
+        // Warn on unsafe call
+        "@typescript-eslint/no-unsafe-call": "warn",
+        // Warn on template expressions with invalid type
+        "@typescript-eslint/restrict-template-expressions": "warn",
+        // Warn on unsafe return of any value
+        "@typescript-eslint/no-unsafe-return": "warn",
+        // Disable prefer default export rule
+        "import/prefer-default-export": "off",
+        // Warn on unresolved imports
+        "import/no-unresolved": "warn",
+        // No file extension for imports
+        "import/extensions": "off",
+        // Warn on unsafe assignment of any value
+        "@typescript-eslint/no-unsafe-assignment": "warn",
+        // Warn on unsafe member access on any value
+        "@typescript-eslint/no-unsafe-member-access": "warn",
+
+        // Custom handling of unused variables
+        "unused-imports/no-unused-vars": [
+            "warn",
+            {
+                "vars": "all",
+                "varsIgnorePattern": "^_",
+                "args": "after-used",
+                "argsIgnorePattern": "^_"
+            }
+        ],
+        // Allow console.warn and console.error
+        "no-console": [
+            "warn",
+            {
+                "allow": ["warn", "error"]
+            }
+        ],
+        // Ensure Tailwind CSS class names are ordered
+        "tailwindcss/classnames-order": "warn",
+        // Allow custom class names alongside Tailwind CSS
+        "tailwindcss/no-custom-classname": "off",
+        // Disallow contradictory Tailwind CSS class names
+        "tailwindcss/no-contradicting-classname": "error",
+        // Ensure imports are sorted
+        "simple-import-sort/imports": "error",
+        // Ensure exports are sorted
+        "simple-import-sort/exports": "error",
+        // Enforce a newline after import statements
+        "import/newline-after-import": [
+            "error",
+            {
+                "count": 1
+            }
+        ],
+        // Disallow duplicate imports
+        "import/no-duplicates": "error",
+        // Ensure consistent usage of type imports
+        "@typescript-eslint/consistent-type-imports": "error",
+        // Override some Airbnb rules for consistency with Prettier
+        "react/jsx-filename-extension": [
+            "warn",
+            {
+                "extensions": [".jsx", ".tsx"]
+            }
+        ],
+        // Disable the need for React to be in scope when using JSX
+        "react/react-in-jsx-scope": "off",
+        // Warn against using autofocus
+        "jsx-a11y/no-autofocus": "warn",
+        // Ensure anchors are valid
+        "jsx-a11y/anchor-is-valid": "warn",
+        // Ensure alt text is used for images
+        "jsx-a11y/alt-text": "warn",
+        // Enforce the use of === and !==
+        "eqeqeq": [
+            "error",
+            "always",
+            {
+                "null": "ignore"
+            }
+        ],
+        // Enforce consistent brace style for control statements
+        "curly": ["error", "all"],
+        // Disallow usage of var
+        "no-var": "error",
+        // Prefer const over let wherever possible
+        "prefer-const": "error",
+        // Prefer arrow functions for callbacks
+        "prefer-arrow-callback": "error",
+        // Disallow else after return in if statements
+        "no-else-return": "error",
+        // Disallow unneeded ternary expressions
+        "no-unneeded-ternary": "error"
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "project": "./tsconfig.json",
+        "ecmaVersion": 2020,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "settings": {
+        "react": {
+            "version": "detect" // Automatically detect the react version
+        }
+    },
+    "overrides": [
+        {
+            "files": ["*.ts", "*.tsx"],
+            "rules": {
+                // Disable explicit module boundary types for TypeScript files
+                "@typescript-eslint/explicit-module-boundary-types": "off"
+            }
+        }
+    ]
+}
